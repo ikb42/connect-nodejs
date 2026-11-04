@@ -18,7 +18,8 @@
   "scripts": {
     "test": "mocha test && mocha --compilers coffee:coffee-script/register -R spec && standard && echo Code looks good!",
     "test-watch": "mocha --compilers coffee:coffee-script/register -R spec --watch",
-    "lint": "eslint --ignore-path .gitignore . && echo Code looks good!"
+    "lint": "eslint --ignore-path .gitignore . && echo Code looks good!",
+    "deploy": "npm version patch -m \"Upgrade to %s [skip ci]\" && git push origin HEAD && git push origin --tags"
   },
   "repository": {
     "type": "git",
@@ -45,8 +46,7 @@
     "base64url": "^3.0.1",
     "lodash": "^4.17.21",
     "qs": "^6.11.0",
-    "request-promise": "^4.2.6",
-    "superagent": "^8.0.6"
+    "undici": "^7.16.0"
   },
   "devDependencies": {
     "chai": "^3.0.0",

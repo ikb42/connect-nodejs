@@ -6,7 +6,7 @@
 var qs = require('qs')
 var url = require('url')
 var async = require('async')
-var request = require('request-promise')
+var request = require('./lib/http')
 var clientRoles = require('./rest/clientRoles')
 var clients = require('./rest/clients')
 var roles = require('./rest/roles')
@@ -23,10 +23,8 @@ var JWT = require('anvil-connect-jwt')
  * OpenID Connect client (also an Anvil Connect server API client).
  * @class AnvilConnect
  * @param [options={}] {Object} Options hashmap object
- * @param [options.agentOptions={}] {Object} Optional, passed to `request`
- *   library (see npm's `request` or `request-promise` for documentation)
- * @param [options.proxy={}] {Object} Optional, passed to `request`
- *  library (see npm's `request` or `request-promise` for documentation)
+ * @param [options.agentOptions={}] {Object} Optional TLS connect options
+ * @param [options.proxy={}] {String|Object} Optional proxy URL
  * @param [options.issuer] {String} URL of the OIDC Provider. Required for
  *   most operations.
  * @param [options.scope] {Array|String} Either an array or a space-separated
