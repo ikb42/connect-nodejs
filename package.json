@@ -41,7 +41,7 @@
   },
   "homepage": "https://github.com/anvilresearch/connect-nodejs",
   "dependencies": {
-    "anvil-connect-jwt": "github:ikb42/connect-jwt",
+    "anvil-connect-jwt": "github:ikb42/connect-jwt#v0.1.10",
     "async": "^3.2.4",
     "base64url": "^3.0.1",
     "lodash": "^4.17.21",
